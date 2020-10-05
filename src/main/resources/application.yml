@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://127.0.0.1:3306/aiz_notify?useUnicode=true&serverTimezone=Asia/Shanghai&useSSL=false&characterEncoding=utf8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: aiz-notify
+    jackson:
+      date-format: yyyy-MM-dd HH:mm:ss
+mybatis-plus:
+  mapper-locations: classpath*:com/aiz/notify/**/xml/*Mapper.xml
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+server:
+  port: 8000
+logging:
+  level:
+    com.aiz.notify: debug
+
+aliyun:
+  access-key-id: 你的16位key id
+  access-key-secret: 你的30位key secret
+  sms:
+    sign-name: 你的短信签名
+mail:
+  smtp:
+    host: smtp.263.net
+    port: 25
+  send:
+    username: 你的发送方邮箱
+    password: 密码
